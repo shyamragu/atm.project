@@ -1,0 +1,32 @@
+def display():
+    print("PRESS 1 IS DEBIT","PRESS 2 IS CREDIT","PRESS 3 IS BALANCE ENQUIRY")
+def debit(AMOUNT):
+    if AMOUNT <= 170000:
+        BALANCE = 170000 - AMOUNT
+        print("BALANCE:", BALANCE)
+    else:
+        print("INSUFFICIENT BALANCE")
+        print("PLEASE CHECK YOUR BALANCE")
+def credit(AMOUNT):
+    BALANCE = 170000 + AMOUNT
+    print("BALANCE:", BALANCE)
+def main():
+    f=1
+    a=int(input("ENTER A PIN:"))
+    while a!=7777 and f<3:
+        a = int(input("PLEASE ENTER YOUR CORRECT PIN: "))
+        f+=1
+    if a==7777:
+        display()
+        b = int(input())
+        if b == 1:
+          print("WITHDRAW")
+          AMOUNT = int(input("ENTER THE AMOUNT:"))
+          debit(AMOUNT)
+        if b == 2:
+           print("DEPOSIT")
+           AMOUNT = int(input("ENTER THE AMOUNT:"))
+           credit(AMOUNT)
+        if b ==3:
+            print("BALANCE:170000")
+main()
